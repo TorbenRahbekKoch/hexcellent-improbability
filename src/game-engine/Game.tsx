@@ -1,16 +1,22 @@
 import { Introduction } from './Introduction'
-import {GameState, State } from './State'
+import { GameState, State } from './State'
 
-export function Game(props: Props) {
-    
-    if (props.gameState.state.value == State.Introduction) {
-        return (<Introduction gameState={props.gameState}></Introduction>)
+export function Game({ gameState }: Props) {
+
+    if (gameState.state.value == State.Introduction) {
+        return (
+            <Introduction
+                title={gameState.game.title} 
+                description={gameState.game.description}
+                onStartGame={() => gameState.state.value = State.InProgress}>
+
+            </Introduction>)
     }
     return (
-        <h1>Test</h1>
+        <h1>Game is started!</h1>
     )
 }
 
 export interface Props {
-    gameState : GameState
+    gameState: GameState
 }

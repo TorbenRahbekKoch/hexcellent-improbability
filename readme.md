@@ -19,6 +19,7 @@ games along the same princpiles as in the the books "Sværd og Troldom" (Fightin
 
 I recently (again) came across the manual (it was probably written in Word 2.0 - a 
 PDF (Danish only) is available in the doc folder) and decided I would try to see if I could
-create something similar, but this time in the browser. 
+create something similar, but this time in a browser, which of course was not a 
+viable option back then ;)
 
-This is the feeble steps in that direction.
+This is the first feeble steps in that direction.

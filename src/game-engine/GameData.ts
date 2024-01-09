@@ -4,6 +4,10 @@ export interface Room {
     description: string
 }
 
+export interface IntroductionData {
+    title
+}
+
 export interface GameData {
     title: string
     description: string
