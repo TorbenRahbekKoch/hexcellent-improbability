@@ -1,19 +1,15 @@
-import { signal } from "@preact/signals"
 import { useState } from 'preact/hooks'
 import './app.css'
 import {Game } from './game-engine/Game'
-import { game } from './games/destroyer-of-mail-boxes/destroyer-of-mail-boxes'
-import { GameState, State } from './game-engine/State'
+import { createGame } from './games/destroyer-of-mail-boxes/destroyer-of-mail-boxes'
+import { HexcellentImprobabilityGame } from "./game-engine/GameDefinition"
 
 export function App() {
-  const [gameState, _] = useState<GameState>(() => { return {
-    state : signal<State>(State.Introduction),
-    game : game 
-  }})
+  const [game, _] = useState<HexcellentImprobabilityGame>(() => createGame())
   
   return (
     <>
-      <Game gameState={gameState}></Game>
+      <Game game={game}></Game>
     </>
   )
 }
