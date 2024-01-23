@@ -1,4 +1,4 @@
-import { Signal } from "@preact/signals"
+import { Signal, signal } from "@preact/signals"
 
 export enum Phase {
     Introduction,
@@ -17,9 +17,17 @@ export interface GameSituation<TVariables> {
 
 export interface GameState {
     phase : Signal<Phase>
-    currentRoom : string    
+    currentRoom : number
 }
 
 export interface GameStateWithVariables<TVariables> extends GameState{
     variables: TVariables
+}
+
+export function createInitialState<TVariables extends GlobalVariables>(currentRoom: number, variables: TVariables) {
+    return {
+        phase : signal<Phase>(Phase.Introduction),
+        currentRoom: currentRoom,
+        variables : variables
+    } 
 }

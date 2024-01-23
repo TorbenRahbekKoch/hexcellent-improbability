@@ -5,7 +5,7 @@ export interface Description {
 }
 
 export interface Room {
-    id: string,
+    id: number,
     title: string,
     description: Description
 }
@@ -13,7 +13,7 @@ export interface Room {
 export interface GameDefinition {
     title: string
     description: string
-    startRoom: string
+    startRoom: number
     rooms: Room[]
 }
 
