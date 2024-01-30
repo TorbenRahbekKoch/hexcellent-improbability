@@ -9,7 +9,7 @@ export function App() {
   
   return (
     <>
-      <Game game={game}></Game>
+      <Game game={game} state={game.state}></Game>
     </>
   )
 }

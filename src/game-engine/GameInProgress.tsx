@@ -1,10 +1,17 @@
+import { Directions } from "./Directions";
 import { HexcellentImprobabilityGame } from "./GameDefinition";
 
-export function GameInProgress({game}: Props) {
-    const currentRoom = game.currentRoom
+export function GameInProgress({ game }: Props) {
+    const currentLocation = game.currentLocation
 
     return (
-        <p>{currentRoom.description(game.variables)}</p>
+        <div>
+            <p>{currentLocation.description(game.variables)}</p>
+            <Directions
+                game={game}
+                directions={currentLocation.directions} 
+                onDirectionSelected={locationId => game.setCurrentLocation(locationId)} />
+        </div>
     )
 }
 

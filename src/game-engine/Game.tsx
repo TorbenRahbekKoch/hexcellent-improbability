@@ -1,11 +1,12 @@
 import { GameInProgress } from './GameInProgress'
 import { Introduction } from './Introduction'
-import { Phase } from './GameState'
+import { GameState, Phase } from './GameState'
 import { HexcellentImprobabilityGame } from './GameDefinition'
+import { Signal } from '@preact/signals'
 
-export function Game({ game }: Props) {
+export function Game({ game, state }: Props) {
 
-    if (game.phase == Phase.Introduction) {
+    if (state.value.phase == Phase.Introduction) {
         return (
             <Introduction
                 title={game.game.title} 
@@ -14,7 +15,7 @@ export function Game({ game }: Props) {
 
             </Introduction>)
     }
-    else if (game.phase == Phase.InProgress){
+    else if (state.value.phase == Phase.InProgress){
         return (
             <GameInProgress game={game}></GameInProgress>
         )
@@ -26,4 +27,5 @@ export function Game({ game }: Props) {
 
 export interface Props {
     game: HexcellentImprobabilityGame
+    state: Signal<GameState>
 }
