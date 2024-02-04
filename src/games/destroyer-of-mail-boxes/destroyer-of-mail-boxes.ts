@@ -35,7 +35,7 @@ well arranged - also an exceptionally beautiful kitchen.`) as Descriptor,
         due to it's incredible uglyness. You should have made it look like the neighbor's hallway, which words simply cannot
         describe. It's absolutely beautiful!`) as Descriptor,
         directions: {
-            east: ((_ : GameVariables) =>  LocationIds.Kitchen) as Locator
+            west: ((_ : GameVariables) =>  LocationIds.Kitchen) as Locator
         }
     }
     ]

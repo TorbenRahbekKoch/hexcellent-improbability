@@ -8,7 +8,7 @@ export function GameInProgress({ game }: Props) {
         <div>
             <p>{currentLocation.description(game.variables)}</p>
             <Directions
-                game={game}
+                variables={game.variables}
                 directions={currentLocation.directions} 
                 onDirectionSelected={locationId => game.setCurrentLocation(locationId)} />
         </div>

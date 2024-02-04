@@ -21,6 +21,7 @@ export function Introduction({ title, description, onStartGame }: Props) {
             document.body.removeEventListener("keydown", onKeyDown)
         }
     })
+    
     return (
         <div class="hxi-introduction">
             <h1>{title}</h1>

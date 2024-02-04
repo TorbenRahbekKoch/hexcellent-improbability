@@ -34,13 +34,11 @@ export interface GameDefinition {
     readonly locations: Location[]
 }
 
+
 export class HexcellentImprobabilityGame {
     constructor(gameDefinition: GameDefinition, state: GameState) {
         this._game = gameDefinition
         this._state = signal(state)
-        // this._variables = signal({
-        //     currentLocation: -1
-        // })
     }
 
     private _game: GameDefinition
@@ -52,10 +50,6 @@ export class HexcellentImprobabilityGame {
     public get state(): Signal<GameState> {
         return this._state
     }
-
-    // public get phase() : Readonly<Phase> {
-    //     return this._state.phase//.value
-    // }
 
     public set phase(value: Phase) {
         const nextState = produce(
@@ -92,10 +86,9 @@ export class HexcellentImprobabilityGame {
             })
     }
 
-    /** This is technically a part of the state, but to allow for easy overriden
+    /** To allow for easy overriden
      * with custom variables it is placed here
      */
-    //protected _variables: Signal<GlobalVariables>
     public get variables(): GlobalVariables {
         return this._state.peek().variables
     }
