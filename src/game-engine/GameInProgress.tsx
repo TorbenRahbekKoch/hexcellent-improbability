@@ -6,6 +6,7 @@ export function GameInProgress({ game }: Props) {
 
     return (
         <div>
+            <h2>{currentLocation.title}</h2>
             <p>{currentLocation.description(game.variables)}</p>
             <Directions
                 variables={game.variables}

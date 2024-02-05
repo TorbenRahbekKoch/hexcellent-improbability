@@ -30,7 +30,11 @@ export function Directions({ variables, directions, onDirectionSelected }: Props
         'Digit2' : directions.south,
         'Numpad2' : directions.south,
         'Digit3' : directions.southEast,
-        'Numpad3' : directions.southEast,        
+        'Numpad3' : directions.southEast,
+        'Digit5': directions.up,
+        'Numpad5': directions.up,
+        'Digit0': directions.down,
+        'Numpad0': directions.down
     }
     
     type allKeys = keyof typeof keyDirectionMap
